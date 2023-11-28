@@ -25,3 +25,9 @@ hexo new post `YOUR-ARTICLE-NAME`
 ```
 ### Step 4
 I guess this step will be simple, you just need to use "markdown" to write your article
+
+### Step 5
+When you're done with your article, push it to your repository and you should make a pull request.
+
+###
+Just wait for us to merge the repositories, it's that simple!
