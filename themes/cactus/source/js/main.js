@@ -10,7 +10,7 @@ if (!!$.prototype.justifiedGallery) {
   $(".article-gallery").justifiedGallery(options);
 }
 
-$(document).ready(function() {
+$(document).ready(async function() {
 
   /**
    * Shows the responsive navigation menu on mobile.
@@ -75,6 +75,27 @@ $(document).ready(function() {
           $("#top-icon-tablet").show();
         }
       });
+    }
+
+    /**
+     * GitHub名人堂实现
+     */
+    if($('.hall-frame')){
+      $('.hall-frame').html('<p>Hall Frame Loading...</p>');
+      try{
+        let response = await fetch('https://api.github.com/repos/HackerProfe/hk.pe/contributors');
+        let data = await response.json()
+        $('.hall-frame').html('');
+        data.forEach(member => {
+          $('.hall-frame').append($(`<li class="member">
+            <a href="${member.html_url}" class="">
+              <img src="${member.avatar_url}" alt="@${member.login}" size="64" height="64" width="64" class="avatar">
+            </a>
+          </li>`));
+        });
+      }catch(e){
+          $('.hall-frame').html('<p>Hall Frame Loading Failed!</p>');
+      }
     }
 
     /**

@@ -1,3 +1,38 @@
+<style>
+  .hall-frame {
+    display: flex !important;
+    list-style: none !important;
+    flex-wrap: wrap !important;
+    padding-left: 0;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .member {
+    margin-right: 8px !important;
+    margin-bottom: 8px !important;
+    box-sizing: border-box;
+  }
+
+  .member li{
+    display: list-item;
+    text-align: -webkit-match-parent;
+    list-style: none !important;
+  }
+
+  .avatar {
+    background-color: #ffffffff;
+    border-radius: 0.375rem;
+    box-shadow: 0 0 0 1px rgba(31,35,40,0.15);;
+    display: inline-block;
+    flex-shrink: 0;
+    line-height: 1;
+    overflow: hidden;
+    vertical-align: middle;
+    border-radius: 50% !important;
+    border-style: none;
+  }
+
+</style>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <%- partial('_partial/post/gallery') %>
   <div class="content" itemprop="articleBody">
@@ -34,6 +69,10 @@
             </div>
           </div>
         <% } else { %>
+          <h1 id="HallFrame"><a href="#HallFrame" class="headerlink" title="HallFrame"></a>Hall Frame</h1>
+          <p>Become one of our contributors on GitHub, and you can show here. <br>(Ranking is determined by contribution)</p>
+          <ul class="hall-frame">
+          </ul>
           <%- page.content %>
         <% } %>
   </div>
