@@ -80,21 +80,21 @@ $(document).ready(async function() {
     /**
      * GitHub名人堂实现
      */
-    if($('.hall-frame')){
-      $('.hall-frame').html('<p>Hall Frame Loading...</p>');
+    if($('.hall-fame')){
+      $('.hall-fame').html('<p>Hall Fame Loading...</p>');
       try{
         let response = await fetch('https://api.github.com/repos/HackerProfe/hk.pe/contributors');
         let data = await response.json()
-        $('.hall-frame').html('');
+        $('.hall-fame').html('');
         data.forEach(member => {
-          $('.hall-frame').append($(`<li class="member">
+          $('.hall-fame').append($(`<li class="member">
             <a href="${member.html_url}" class="">
               <img src="${member.avatar_url}" alt="@${member.login}" size="64" height="64" width="64" class="avatar">
             </a>
           </li>`));
         });
       }catch(e){
-          $('.hall-frame').html('<p>Hall Frame Loading Failed!</p>');
+          $('.hall-fame').html('<p>Hall Fame Loading Failed!</p>');
       }
     }
 
